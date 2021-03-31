@@ -1,0 +1,40 @@
+<?php
+
+namespace App\Admin;
+
+use Illuminate\Database\Eloquent\Model;
+use Illuminate\Notifications\Notifiable;
+
+class Article extends Model
+{
+    //
+    use Notifiable;
+
+    /**
+     * The attributes that are mass assignable.
+     *
+     * @var array
+     */
+    protected $fillable = [
+        'title_fr',
+        'title_en',
+        'description_fr',
+        'description_en',
+        'excerpt_fr',
+        'excerpt_en',
+        'url_en',
+        'url_fr',
+        'author',
+        'tags_fr',
+        'tages_en',
+        'image_url'
+    ];
+
+     /**
+     * Get the categorie record associated with the article.
+     */
+    public function categorie()
+    {
+        return $this->hasOne('App\Admin\Categorie', 'category_id');
+    }
+}

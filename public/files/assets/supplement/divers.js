@@ -1,0 +1,42 @@
+var donneesdivers=[];
+
+$(document).ready(function() {
+    // alert('bien joue');
+    $.ajax({
+        type: "GET",
+    
+        dataType: "json",
+    
+        url: "http://localhost:8000/api/divers",
+    
+        success:function (data) {
+          // alert('get success');
+          console.log('succes');
+          donneesdivers = data;
+          console.log(donneesdivers);
+        },
+    
+        error:function () {
+          alert('erreur');
+          console.log('erreur');
+        }
+    });
+
+     // test();
+});
+
+/*function test() {
+    let d = 0
+    alert("ok noxus "+donnees[d].prix);
+}*/
+
+function getDonneesDivers() {
+  return donneesdivers;
+}
+
+/*
+$('.affich').on('click', function() {
+    
+    test();
+    
+});*/

@@ -1,0 +1,17 @@
+
+/* footer */
+.footer{
+color: #ffffff;
+padding: 15px, 0;
+position: fixed;
+bottom: 0;
+width: 100%;
+}
+
+.footer p a:hover{
+    color: #404E67;
+}
+
+.img-fluid{
+    height: 40px;
+}

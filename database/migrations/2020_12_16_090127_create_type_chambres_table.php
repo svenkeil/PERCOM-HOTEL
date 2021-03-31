@@ -1,0 +1,36 @@
+<?php
+
+use Illuminate\Database\Migrations\Migration;
+use Illuminate\Database\Schema\Blueprint;
+use Illuminate\Support\Facades\Schema;
+
+class CreateTypeChambresTable extends Migration
+{
+    /**
+     * Run the migrations.
+     *
+     * @return void
+     */
+    public function up()
+    {
+        Schema::create('type_chambres', function (Blueprint $table) {
+            $table->id();
+            $table->string('name')->unique();
+            $table->string('nb_personnes')->nullable();
+            $table->string('periode_vente')->nullable();
+            $table->string('created_by')->nullable();
+            $table->string('hotel_id')->nullable();
+            $table->timestamps();
+        });
+    }
+
+    /**
+     * Reverse the migrations.
+     *
+     * @return void
+     */
+    public function down()
+    {
+        Schema::dropIfExists('type_chambres');
+    }
+}
